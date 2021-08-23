@@ -2,10 +2,10 @@ export default function Sidebar(){
     return(
     <div class="sidebar">
         <div class="usuario">
-          <img src="assets/img/catanacomics.svg" />
+          <img src={usuario.img} />
           <div class="texto">
-            <strong>catanacomics</strong>
-            Catana
+            <strong>{usuario.nome}</strong>
+            {usuario.subnome}
           </div>
         </div>
 
@@ -44,6 +44,12 @@ function Sugestao(info) {
       </div>
     );  
 }
+const usuario = 
+  {
+    nome: 'catanacomics',
+    subnome:'Catana',
+    img:'assets/img/catanacomics.svg'
+  };
 
 const sugestoes = [
   {
@@ -71,4 +77,4 @@ const sugestoes = [
     img:'assets/img/smallcutecats.svg',
     razao:'Segue você'
   }
-]
+];
