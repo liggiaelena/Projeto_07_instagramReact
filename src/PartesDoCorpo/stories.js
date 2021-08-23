@@ -1,21 +1,28 @@
 export default function Stories(){
     return (
         <div class="stories">
-            <div class="story">
-                <div class="imagem">
-                    {nameStories.map(nameStory => <img src= `assets/img/{nameStory}.svg` />)}
-                    <img src="assets/img/9gag.svg" />
-                </div>
-                <div class="usuario">
-                    9gag
-                </div>
-            </div>
-
-            <div class="setinha">
+           {nameStories.map(name)}
+           
+           <div class="setinha">
             <ion-icon name="chevron-forward-circle"></ion-icon>
             </div>
         </div>
+        
     );
+}
+
+function name(name) {
+    return(
+        <div class="story">
+        <div class="imagem">
+                <img src={`assets/img/${name}.svg`} />
+        </div>
+        <div class="usuario">
+                {name}
+        </div>
+    </div>
+    );
+    
 }
 
 const nameStories=[
