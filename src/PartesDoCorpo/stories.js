@@ -2,75 +2,13 @@ export default function Stories(){
     return (
         <div class="stories">
             <div class="story">
-            <div class="imagem">
-                <img src="assets/img/9gag.svg" />
-            </div>
-            <div class="usuario">
-                9gag
-            </div>
-            </div>
-
-            <div class="story">
-            <div class="imagem">
-                <img src="assets/img/meowed.svg" />
-            </div>
-            <div class="usuario">
-                meowed
-            </div>
-            </div>
-
-            <div class="story">
-            <div class="imagem">
-                <img src="assets/img/barked.svg" />
-            </div>
-            <div class="usuario">
-                barked
-            </div>
-            </div>
-
-            <div class="story">
-            <div class="imagem">
-                <img src="assets/img/nathanwpylestrangeplanet.svg" />
-            </div>
-            <div class="usuario">
-                nathanwpylestrangeplanet
-            </div>
-            </div>
-
-            <div class="story">
-            <div class="imagem">
-                <img src="assets/img/wawawicomics.svg" />
-            </div>
-            <div class="usuario">
-                wawawicomics
-            </div>
-            </div>
-            
-            <div class="story">
-            <div class="imagem">
-                <img src="assets/img/respondeai.svg" />
-            </div>
-            <div class="usuario">
-                respondeai
-            </div>
-            </div>
-
-            <div class="story">
-            <div class="imagem">
-                <img src="assets/img/filomoderna.svg" />
-            </div>
-            <div class="usuario">
-                filomoderna
-            </div>
-            </div>
-
-            <div class="story">
-            <div class="imagem">
-                <img src="assets/img/memeriagourmet.svg" />
-            </div>
-            <div class="usuario">
-                memeriagourmet
-            </div>
+                <div class="imagem">
+                    {nameStories.map(nameStory => <img src= `assets/img/{nameStory}.svg` />)}
+                    <img src="assets/img/9gag.svg" />
+                </div>
+                <div class="usuario">
+                    9gag
+                </div>
             </div>
 
             <div class="setinha">
@@ -79,3 +17,15 @@ export default function Stories(){
         </div>
     );
 }
+
+const nameStories=[
+    "9gag",
+    "meowed",
+    "barked",
+    "nathanwpylestrangeplanet",
+    "wawawicomics",
+    "respondeai",
+    "filomoderna",
+    "memeriagourmet"
+
+]
