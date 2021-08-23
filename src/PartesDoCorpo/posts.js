@@ -1,26 +1,26 @@
 export default function Posts(){
     return(
         <div class="posts">
-            {infoPost.map(Post)}
+            {infoPost.map((info)=> <Post informacao={info} />)}
         </div>
     );
 }
 
 
-function Post(info) {
+function Post(props) {
     return(
         <div class="post">
             <div class="topo">
                 <div class="usuario">
-                <img src={`assets/img/${info.nameUser}.svg`}/>
-                {info.nameUser}
+                <img src={`assets/img/${props.informacao.nameUser}.svg`}/>
+                {props.informacao.nameUser}
                 </div>
                 <div class="acoes">
                     <ion-icon name="ellipsis-horizontal"></ion-icon>
                 </div>
             </div>
             <div class="conteudo">
-                <img src={info.conteudo} />
+                <img src={props.informacao.conteudo} />
             </div>
             <div class="fundo">
                 <div class="acoes">
@@ -33,9 +33,9 @@ function Post(info) {
                 </div>
 
                 <div class="curtidas">
-                    <img src={info.img} />
+                    <img src={props.informacao.img} />
                     <div class="texto">
-                        Curtido por <strong>{info.seguidor}</strong> e <strong>outras {info.curtidas} pessoas</strong>
+                        Curtido por <strong>{props.informacao.seguidor}</strong> e <strong>outras {props.informacao.curtidas} pessoas</strong>
                     </div>
                 </div>
             </div>

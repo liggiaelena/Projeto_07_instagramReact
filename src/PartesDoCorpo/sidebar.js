@@ -1,21 +1,14 @@
 export default function Sidebar(){
     return(
     <div class="sidebar">
-        <div class="usuario">
-          <img src={usuario.img} />
-          <div class="texto">
-            <strong>{usuario.nome}</strong>
-            {usuario.subnome}
-          </div>
-        </div>
+        <Usuario info={usuario} />
 
         <div class="sugestoes">
           <div class="titulo">
             Sugestões para você
             <div>Ver tudo</div>
           </div>
-
-          {sugestoes.map(Sugestao)}
+          {sugestoes.map((sugestao)=> <Sugestao info={sugestao} />)}
         </div>
 
         <div class="links">
@@ -28,15 +21,27 @@ export default function Sidebar(){
     </div>
     );
 }
+function Usuario(props) {
+  return(
+     <div class="usuario">
+          <img src={props.info.img} />
+          <div class="texto">
+            <strong>{props.info.nome}</strong>
+            {props.info.subnome}
+          </div>
+        </div>
+  );
+ 
+}
 
-function Sugestao(info) {
+function Sugestao(props) {
     return(
       <div class="sugestao">
         <div class="usuario">
-          <img src={info.img} />
+          <img src={props.info.img} />
           <div class="texto">
-            <div class="nome">{info.nome}</div>
-            <div class="razao">{info.razao}</div>
+            <div class="nome">{props.info.nome}</div>
+            <div class="razao">{props.info.razao}</div>
           </div>
         </div>
 

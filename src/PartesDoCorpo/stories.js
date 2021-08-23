@@ -1,8 +1,8 @@
 export default function Stories(){
     return (
         <div class="stories">
-           {nameStories.map(name)}
-           
+           {nameStories.map((name)=> <Name info={name}/>)}
+
            <div class="setinha">
             <ion-icon name="chevron-forward-circle"></ion-icon>
             </div>
@@ -11,14 +11,14 @@ export default function Stories(){
     );
 }
 
-function name(name) {
+function Name(props) {
     return(
         <div class="story">
         <div class="imagem">
-                <img src={`assets/img/${name}.svg`} />
+                <img src={`assets/img/${props.info}.svg`} />
         </div>
         <div class="usuario">
-                {name}
+                {props.info}
         </div>
     </div>
     );
